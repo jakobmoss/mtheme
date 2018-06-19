@@ -32,33 +32,28 @@
 %
 % \subsection{Tol \texttt{pgfplots} theme}
 %
-% Paul Tol's 12-color palette\footnote{Tol actually describes several
-% palettes; these colours are taken from the bottom row of Figure 3 in his
-% technical note.} is as follows:
+% Paul Tol's color palettes\footnote{Tol actually describes several palettes;
+% see \url{https://personal.sron.nl/~pault/}} is as follows:
 %
 %    \begin{macrocode}
-\definecolor{TolDarkPurple}{HTML}{332288}
-\definecolor{TolDarkBlue}{HTML}{6699CC}
-\definecolor{TolLightBlue}{HTML}{88CCEE}
-\definecolor{TolLightGreen}{HTML}{44AA99}
-\definecolor{TolDarkGreen}{HTML}{117733}
-\definecolor{TolDarkBrown}{HTML}{999933}
-\definecolor{TolLightBrown}{HTML}{DDCC77}
-\definecolor{TolDarkRed}{HTML}{661100}
-\definecolor{TolLightRed}{HTML}{CC6677}
-\definecolor{TolLightPink}{HTML}{AA4466}
-\definecolor{TolDarkPink}{HTML}{882255}
-\definecolor{TolLightPurple}{HTML}{AA4499}
-\definecolor{TolGrey}{HTML}{BBBBBB}
-\definecolor{TolPaleGrey}{HTML}{DDDDDD}
-\definecolor{TolDarkGrey}{HTML}{555555}
 \definecolor{TolBrightBlue}{HTML}{4477AA}
 \definecolor{TolBrightCyan}{HTML}{66CCEE}
 \definecolor{TolBrightGreen}{HTML}{228833}
 \definecolor{TolBrightYellow}{HTML}{CCBB44}
 \definecolor{TolBrightRed}{HTML}{EE6677}
 \definecolor{TolBrightPurple}{HTML}{AA3377}
-\definecolor{TolBrightGrey}{HTML}{BBBBBB}
+\definecolor{TolMutedIndigo}{HTML}{332288}
+\definecolor{TolMutedCyan}{HTML}{88CCEE}
+\definecolor{TolMutedTeal}{HTML}{44AA99}
+\definecolor{TolMutedGreen}{HTML}{117733}
+\definecolor{TolMutedOlive}{HTML}{999933}
+\definecolor{TolMutedSand}{HTML}{DDCC77}
+\definecolor{TolMutedRose}{HTML}{CC6677}
+\definecolor{TolMutedWine}{HTML}{882255}
+\definecolor{TolMutedPurple}{HTML}{AA4499}
+\definecolor{TolPaleGrey}{HTML}{DDDDDD}
+\definecolor{TolDarkGrey}{HTML}{555555}
+\definecolor{TolGrey}{HTML}{BBBBBB}
 %    \end{macrocode}
 %
 % To use these colors, we describe ``cycle lists'' from which PGF chooses
@@ -69,30 +64,33 @@
 %
 %    \begin{macrocode}
 \pgfplotscreateplotcyclelist{mbarplot cycle}{%
-  {draw=TolDarkBlue,    fill=TolDarkBlue!70},
-  {draw=TolLightBrown,  fill=TolLightBrown!70},
-  {draw=TolLightGreen,  fill=TolLightGreen!70},
-  {draw=TolDarkPink,    fill=TolDarkPink!70},
-  {draw=TolDarkPurple,  fill=TolDarkPurple!70},
-  {draw=TolDarkRed,     fill=TolDarkRed!70},
-  {draw=TolDarkBrown,   fill=TolDarkBrown!70},
-  {draw=TolLightRed,    fill=TolLightRed!70},
-  {draw=TolLightPink,   fill=TolLightPink!70},
-  {draw=TolLightPurple, fill=TolLightPurple!70},
-  {draw=TolLightBlue,   fill=TolLightBlue!70},
-  {draw=TolDarkGreen,   fill=TolDarkGreen!70},
+  {draw=TolMutedGreen,   fill=TolMutedGreen!70},
+  {draw=TolMutedCyan,    fill=TolMutedCyan!70},
+  {draw=TolMutedWine,    fill=TolMutedWine!70},
+  {draw=TolMutedTeal,    fill=TolMutedTeal!70},
+  {draw=TolMutedOlive,   fill=TolMutedOlive!70},
+  {draw=TolMutedPurple,  fill=TolMutedPurple!70},
+  {draw=TolMutedRose,    fill=TolMutedRose!70},
+  {draw=TolMutedIndigo,  fill=TolMutedIndigo!70},
+  {draw=TolMutedSand,    fill=TolMutedSand!70},
 }
 %    \end{macrocode}
 % \end{macro}
 %
 % \begin{macro}{mlineplot cycle}
-%   Colors and styles intended for line charts with up to 4 series.
+%   Colors and styles intended for line charts (specific styles defined further
+%   below).
 %    \begin{macrocode}
 \pgfplotscreateplotcyclelist{mlineplot cycle}{%
-  {TolBrightBlue, mark=*, mark size=2.1pt},
-  {TolBrightRed, mark=square*, mark size=1.9pt},
-  {TolBrightGreen, mark=triangle*, mark size=2.4pt},
-  {TolBrightYellow, mark=diamond*, mark size=2.5pt},
+  {TolMutedGreen},
+  {TolMutedCyan},
+  {TolMutedWine},
+  {TolMutedTeal},
+  {TolMutedOlive},
+  {TolMutedPurple},
+  {TolMutedRose},
+  {TolMutedIndigo},
+  {TolMutedSand},
 }
 %    \end{macrocode}
 % \end{macro}
@@ -123,16 +121,16 @@
     },
     cycle list name=mlineplot cycle,
     mlblue/.style={
-      {TolBrightBlue, mark=*, mark size=2.1pt}
+      {color=TolBrightBlue, mark=*, mark size=2.1pt}
     },
     mlred/.style={
-      {TolBrightRed, mark=square*, mark size=1.9pt},
+      {color=TolBrightRed, mark=square*, mark size=1.9pt}
     },
     mlgreen/.style={
-       {TolBrightGreen, mark=triangle*, mark size=2.4pt},
+       {color=TolBrightGreen, mark=triangle*, mark size=2.4pt}
     },
     mlyellow/.style={
-      {TolBrightYellow, mark=diamond*, mark size=2.5pt},
+      {color=TolBrightYellow, mark=diamond*, mark size=2.5pt}
     },
   },
 %    \end{macrocode}
