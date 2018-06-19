@@ -82,8 +82,6 @@
 %   below).
 %    \begin{macrocode}
 \pgfplotscreateplotcyclelist{mlineplot cycle}{%
-  {TolMutedGreen},
-  {TolMutedCyan},
   {TolMutedWine},
   {TolMutedTeal},
   {TolMutedOlive},
@@ -91,6 +89,8 @@
   {TolMutedRose},
   {TolMutedIndigo},
   {TolMutedSand},
+  {TolMutedGreen},
+  {TolMutedCyan},
 }
 %    \end{macrocode}
 % \end{macro}
@@ -121,16 +121,22 @@
     },
     cycle list name=mlineplot cycle,
     mlblue/.style={
-      {color=TolBrightBlue, mark=*, mark size=2.1pt}
+      {color=TolBrightBlue, mark=*, mark size=2.4pt}
+    },
+    mlcyan/.style={
+      {color=TolBrightCyan, mark=square*, mark size=1.9pt}
     },
     mlred/.style={
-      {color=TolBrightRed, mark=square*, mark size=1.9pt}
+      {color=TolBrightRed, mark=triangle*, mark size=2.6pt}
     },
     mlgreen/.style={
-       {color=TolBrightGreen, mark=triangle*, mark size=2.4pt}
+       {color=TolBrightGreen, mark=*, mark size=2.4pt}
     },
     mlyellow/.style={
       {color=TolBrightYellow, mark=diamond*, mark size=2.5pt}
+    },
+    mlpurple/.style={
+      {color=TolBrightPurple, mark=diamond*, mark size=2.5pt}
     },
   },
 %    \end{macrocode}
